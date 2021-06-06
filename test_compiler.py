@@ -53,8 +53,8 @@ for file in glob.glob('tests/tests_nlsandler/**/valid/*.c', recursive = True):
         print('Build: OK')
     else:
         print('Build: FAIL')
-    run_gcc = subprocess.Popen(['/tmp/out_gcc' + file], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
-    run_clang = subprocess.Popen(['/tmp/out_clang' + file], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
+    run_gcc = subprocess.Popen(['/tmp/out_gcc'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
+    run_clang = subprocess.Popen(['/tmp/out_clang'], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE )
     if(run_gcc.returncode == run_clang.returncode):
         print('Run:   OK')
     else:
